@@ -1,0 +1,19 @@
+# Django
+Django==3.1
+
+# Django REST
+djangorestframework
+markdown
+django-filter
+
+
+# Base
+psycopg2-binary==2.8
+Pillow==8.4.0
+
+# Testing
+mypy==0.910
+pytest==7.0.1
+
+# Extension
+django-environ==0.4.5
