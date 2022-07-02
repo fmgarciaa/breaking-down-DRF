@@ -1,6 +1,3 @@
-from audioop import maxpp
-from distutils import text_file
-from tabnanny import verbose
 from django.db import models
 from simple_history.models import HistoricalRecords
 
@@ -70,6 +67,8 @@ class Product(BaseModel):
     name = models.CharField('name', max_length=150, unique=True, blank=False, null=False)
     description = models.TextField('description', blank=True, null=True)
     image = models.ImageField('product image', upload_to=None, blank=True, null=True)
+    measure_unit = models.ForeignKey(MeasureUnit, on_delete=models.CASCADE, verbose_name='measure units', null=True)
+    category_product = models.ForeignKey(CategoryProduct, on_delete=models.CASCADE, verbose_name='Categorys', null=True)
     historical = HistoricalRecords()
 
     @property
